@@ -79,7 +79,7 @@ app.controller('myCtrl', function($scope) {
 			$scope.transactions[key].forEach(trx => {
 				trx.ts = moment(trx.ts).fromNow();
 
-				$scope.balance += trx.amt;
+				if ($scope.user == key) $scope.balance += trx.amt;
 			});
 		}
 
